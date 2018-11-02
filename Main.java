@@ -5,18 +5,53 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
         ArrayList<ArrayList<String>> temp = parseFile("acidData.csv");
-        ArrayList<String> stringArrayList = temp.get(0);
+        ArrayList<String> acidSequenceArrayList = temp.get(0);
         ArrayList<String> classArrayList = temp.get(1);
-        //TODO check if the class is its own string
-        ArrayList<int[]> result = new ArrayList<>();
+        ArrayList<int[]> numberOfAminoAcidsForEachProtein = getNumberOfAminoAcidsForEachProtein(acidSequenceArrayList);
+        ArrayList<ProteinObject> allProteins = getAllProteins(numberOfAminoAcidsForEachProtein, classArrayList);
+        ArrayList<ProteinObject> DNAProteins = getProteinsFromClass(allProteins, "DNA");
+        ArrayList<ProteinObject> RNAProteins = getProteinsFromClass(allProteins, "RNA");
+        ArrayList<ProteinObject> DRNAProteins = getProteinsFromClass(allProteins, "DRNA");
+        ArrayList<ProteinObject> nonDRNAProteins = getProteinsFromClass(allProteins, "nonDRNA");
+        writeToCSVFile(allProteins, "projectAllClasses.csv");
+        writeToCSVFile(DNAProteins,"projectDNAonly.csv");
+        writeToCSVFile(RNAProteins,"projectRNAonly.csv");
+        writeToCSVFile(DRNAProteins,"projectDRNAonly.csv");
+        writeToCSVFile(nonDRNAProteins,"projectnonDRNAonly.csv");
+    }
+
+    private static ArrayList<ProteinObject> getAllProteins(ArrayList<int[]> numberOfAminoAcidsForEachProtein, ArrayList<String> classArrayList) {
+        if(numberOfAminoAcidsForEachProtein.size() != classArrayList.size())
+            throw new IllegalArgumentException("stringArrayList.size() should equal classArrayList.size() if file was parsed correctly. but they werent.");
+        ArrayList<ProteinObject> allProteins = new ArrayList<>();
+        for(int i = 0; i < numberOfAminoAcidsForEachProtein.size(); i++) {
+            ProteinObject proteinObject = new ProteinObject(numberOfAminoAcidsForEachProtein.get(i), classArrayList.get(i));
+            allProteins.add(proteinObject);
+        }
+        return allProteins;
+    }
+
+    private static ArrayList<ProteinObject> getProteinsFromClass(ArrayList<ProteinObject> allProteins, String proteinClass) {
+        ArrayList<ProteinObject> proteinsFromClass = new ArrayList<>();
+        for(int i = 0; i < allProteins.size(); i++) {
+            if(allProteins.get(i).getProteinClass().equals(proteinClass)) {
+                ProteinObject proteinObject = allProteins.get(i);
+                proteinsFromClass.add(proteinObject);
+            }
+        }
+        return proteinsFromClass;
+    }
+
+    private static ArrayList<int[]> getNumberOfAminoAcidsForEachProtein(ArrayList<String> stringArrayList) {
+        ArrayList<int[]> numberOfAminoAcidsForEachProtein = new ArrayList<>();
         for(int i = 0; i < stringArrayList.size(); i++) {
             int[] letterCount = calcLetterCount(stringArrayList.get(i));
             System.out.println(Arrays.toString(letterCount));
-            result.add(letterCount);
+            numberOfAminoAcidsForEachProtein.add(letterCount);
         }
-        writeToFile(result, classArrayList, "projectFeatureSelect1.csv");
+        return numberOfAminoAcidsForEachProtein;
     }
-
+    
     private static int[] calcLetterCount(String s) {
         int[] result = new int[26];
         for( int i =0; i < s.length(); i++) {
@@ -133,20 +168,18 @@ public class Main {
      * write files
      * stringArrayList.size() should equal classArrayList.size() if file was parsed correctly
      */
-    private static Boolean writeToFile(ArrayList<int[]> stringArrayList, ArrayList<String> classArrayList, String filename) {
-        if(stringArrayList.size() != classArrayList.size())
-            throw new IllegalArgumentException("stringArrayList.size() should equal classArrayList.size() if file was parsed correctly. but they werent");
+    private static Boolean writeToCSVFile(ArrayList<ProteinObject> proteinArrayList, String filename) {
         BufferedWriter bw;
         try {
             bw = new BufferedWriter(new FileWriter(filename));
             bw.write("F1" + ", " + "F2" + ", " + "F3" + ", " + "F4" + ", " + "F5" + ", " + "F6" + ", " + "F7" + ", " + "F8" + ", " + "F9" + ", " + "F10" + ", " + "F11" + ", " + "F12" + ", " + "F13" + ", "
                     + "F14" + ", " + "F15" + ", " + "F16" + ", " + "F17" + ", " + "F18" + ", " + "F19" + ", " + "F20" + ", " + "F21" + ", " + "F22" + ", " + "F23" + ", " + "F24" + ", " + "F25" + ", " + "F26" + ", " +  "Class");
-            for(int i = 0; i < stringArrayList.size(); i++) {
+            for(int i = 0; i < proteinArrayList.size(); i++) {
                 bw.newLine();
-                int[] temp = stringArrayList.get(i);
+                int[] temp = proteinArrayList.get(i).getNumberOfAminoAcidsForEachProtein();
                 bw.write(temp[0] + ", " + temp[1] + ", " + temp[2] + ", " + temp[3] + ", " + temp[4] + ", " + temp[5] + ", " + temp[6] + ", " + temp[7] + ", " + temp[8] + ", " + temp[9] + ", " + temp[10] + ", " + temp[11] + ", " +
                                 temp[12] + ", " + temp[13] + ", " + temp[14] + ", " + temp[15] + ", " + temp[16] + ", " + temp[17] + ", " + temp[18] + ", " + temp[19] + ", " + temp[20] + ", " + temp[21] + ", " + temp[22] + ", " +
-                                temp[23] + ", " + temp[24] + ", " + temp[25] + ", " + classArrayList.get(i));
+                                temp[23] + ", " + temp[24] + ", " + temp[25] + ", " + proteinArrayList.get(i).getProteinClass());
             }
             bw.close();
         }
