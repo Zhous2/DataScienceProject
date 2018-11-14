@@ -1,3 +1,4 @@
+Name,numBindingResiduesRNA,numResidueGrpsRNA,avgPropensityRNA,numBindingResiduesDNA,numResidueGrpsDNA,avgPropensityDNA,numBindingResiduesPrt,numResidueGrpsPrt,avgPropensityPrt,whichResidueHighest,whichPropensityHighest
 seq0,0,0,0.048349802371541475,121,50,0.238387351778656,0,0,0.3898142292490117,1,2
 seq1,0,0,0.0205909943714822,50,14,0.14692120075046908,54,8,0.6989587242026264,2,2
 seq2,42,3,0.04814164305949006,39,4,0.1609716713881019,6,1,0.6731019830028331,0,2

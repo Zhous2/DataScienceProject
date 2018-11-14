@@ -93,6 +93,8 @@ public class GeneratingFeaturesFromBindingPropensity {
        BufferedWriter bw;
        try {
            bw = new BufferedWriter(new FileWriter(filename));
+           bw.write("Name,numBindingResiduesRNA,numResidueGrpsRNA,avgPropensityRNA,numBindingResiduesDNA,numResidueGrpsDNA,avgPropensityDNA,numBindingResiduesPrt,numResidueGrpsPrt,avgPropensityPrt,whichResidueHighest,whichPropensityHighest");
+           bw.newLine();
            for(int i = 0; i < objects.size(); i++) {
                bw.write(objects.get(i).features());
                bw.newLine();
