@@ -7,12 +7,12 @@ public class AddClass {
 //        String featureGenerationFileName = "autoGearyFull.csv";
 //        String outputFileName = "autoGearyComplete.csv";
 
-        ArrayList<String> featureGenerationResults = parseFile("autoMoranFull.csv"); //add csv file here
+        ArrayList<String> featureGenerationResults = parseFile("0-8999.csv"); //add csv file here
         ArrayList<String> classList = parseFileGetClass("acidData.csv");
 
         ArrayList<String> featureGenerationWithClass = combineFeatureGenerationWithClassList(featureGenerationResults, classList);
 
-        writeToFile(featureGenerationWithClass,"autoMoranComplete.csv");  //output name you want
+        writeToFile(featureGenerationWithClass,"CTDwithClass.csv");  //output name you want
     }
 
     private static ArrayList<String> combineFeatureGenerationWithClassList(ArrayList<String> featureGenerationResults, ArrayList<String> classList) {
