@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?><process version="9.0.003">
+  <context>
+    <input/>
+    <output/>
+    <macros/>
+  </context>
+  <operator activated="true" class="process" compatibility="9.0.003" expanded="true" name="Process">
+    <parameter key="logverbosity" value="init"/>
+    <parameter key="random_seed" value="2001"/>
+    <parameter key="send_mail" value="never"/>
+    <parameter key="notification_email" value=""/>
+    <parameter key="process_duration_for_mail" value="30"/>
+    <parameter key="encoding" value="SYSTEM"/>
+    <process expanded="true">
+      <operator activated="true" class="read_csv" compatibility="9.0.003" expanded="true" height="68" name="Read CSV" width="90" x="45" y="34">
+        <parameter key="csv_file" value="C:\Users\Derek\Documents\CMSC435\project\dipepComplete.csv"/>
+        <parameter key="column_separators" value=","/>
+        <parameter key="trim_lines" value="false"/>
+        <parameter key="use_quotes" value="true"/>
+        <parameter key="quotes_character" value="&quot;"/>
+        <parameter key="escape_character" value="\"/>
+        <parameter key="skip_comments" value="true"/>
+        <parameter key="comment_characters" value="#"/>
+        <parameter key="starting_row" value="1"/>
+        <parameter key="parse_numbers" value="true"/>
+        <parameter key="decimal_character" value="."/>
+        <parameter key="grouped_digits" value="false"/>
+        <parameter key="grouping_character" value=","/>
+        <parameter key="infinity_representation" value=""/>
+        <parameter key="date_format" value="MMM d, yyyy h:mm:ss a z"/>
+        <parameter key="first_row_as_names" value="true"/>
+        <list key="annotations"/>
+        <parameter key="time_zone" value="SYSTEM"/>
+        <parameter key="locale" value="English (United States)"/>
+        <parameter key="encoding" value="windows-1252"/>
+        <parameter key="read_all_values_as_polynominal" value="false"/>
+        <list key="data_set_meta_data_information">
+          <parameter key="0" value="Feature.true.polynominal.attribute"/>
+          <parameter key="1" value="[G3\.3\.1\.1\.1].true.real.attribute"/>
+          <parameter key="2" value="[G3\.3\.1\.1\.2].true.real.attribute"/>
+          <parameter key="3" value="[G3\.3\.1\.1\.3].true.real.attribute"/>
+          <parameter key="4" value="[G3\.3\.1\.1\.4].true.real.attribute"/>
+          <parameter key="5" value="[G3\.3\.1\.1\.5].true.real.attribute"/>
+          <parameter key="6" value="[G3\.3\.1\.1\.6].true.real.attribute"/>
+          <parameter key="7" value="[G3\.3\.1\.1\.7].true.real.attribute"/>
+          <parameter key="8" value="[G3\.3\.1\.1\.8].true.real.attribute"/>
+          <parameter key="9" value="[G3\.3\.1\.1\.9].true.real.attribute"/>
+          <parameter key="10" value="[G3\.3\.1\.1\.10].true.real.attribute"/>
+          <parameter key="11" value="[G3\.3\.1\.1\.11].true.real.attribute"/>
+          <parameter key="12" value="[G3\.3\.1\.1\.12].true.real.attribute"/>
+          <parameter key="13" value="[G3\.3\.1\.1\.13].true.real.attribute"/>
+          <parameter key="14" value="[G3\.3\.1\.1\.14].true.real.attribute"/>
+          <parameter key="15" value="[G3\.3\.1\.1\.15].true.real.attribute"/>
+          <parameter key="16" value="[G3\.3\.1\.1\.16].true.real.attribute"/>
+          <parameter key="17" value="[G3\.3\.1\.1\.17].true.real.attribute"/>
+          <parameter key="18" value="[G3\.3\.1\.1\.18].true.real.attribute"/>
+          <parameter key="19" value="[G3\.3\.1\.1\.19].true.real.attribute"/>
+          <parameter key="20" value="[G3\.3\.1\.1\.20].true.real.attribute"/>
+          <parameter key="21" value="[G3\.3\.1\.1\.21].true.real.attribute"/>
+          <parameter key="22" value="[G3\.3\.1\.1\.22].true.real.attribute"/>
+          <parameter key="23" value="[G3\.3\.1\.1\.23].true.real.attribute"/>
+          <parameter key="24" value="[G3\.3\.1\.1\.24].true.real.attribute"/>
+          <parameter key="25" value="[G3\.3\.1\.1\.25].true.real.attribute"/>
+          <parameter key="26" value="[G3\.3\.1\.1\.26].true.real.attribute"/>
+          <parameter key="27" value="[G3\.3\.1\.1\.27].true.real.attribute"/>
+          <parameter key="28" value="[G3\.3\.1\.1\.28].true.real.attribute"/>
+          <parameter key="29" value="[G3\.3\.1\.1\.29].true.real.attribute"/>
+          <parameter key="30" value="[G3\.3\.1\.1\.30].true.real.attribute"/>
+          <parameter key="31" value="[G3\.3\.2\.1\.1].true.real.attribute"/>
+          <parameter key="32" value="[G3\.3\.2\.1\.2].true.real.attribute"/>
+          <parameter key="33" value="[G3\.3\.2\.1\.3].true.real.attribute"/>
+          <parameter key="34" value="[G3\.3\.2\.1\.4].true.real.attribute"/>
+          <parameter key="35" value="[G3\.3\.2\.1\.5].true.real.attribute"/>
+          <parameter key="36" value="[G3\.3\.2\.1\.6].true.real.attribute"/>
+          <parameter key="37" value="[G3\.3\.2\.1\.7].true.real.attribute"/>
+          <parameter key="38" value="[G3\.3\.2\.1\.8].true.real.attribute"/>
+          <parameter key="39" value="[G3\.3\.2\.1\.9].true.real.attribute"/>
+          <parameter key="40" value="[G3\.3\.2\.1\.10].true.real.attribute"/>
+          <parameter key="41" value="[G3\.3\.2\.1\.11].true.real.attribute"/>
+          <parameter key="42" value="[G3\.3\.2\.1\.12].true.real.attribute"/>
+          <parameter key="43" value="[G3\.3\.2\.1\.13].true.real.attribute"/>
+          <parameter key="44" value="[G3\.3\.2\.1\.14].true.real.attribute"/>
+          <parameter key="45" value="[G3\.3\.2\.1\.15].true.real.attribute"/>
+          <parameter key="46" value="[G3\.3\.2\.1\.16].true.real.attribute"/>
+          <parameter key="47" value="[G3\.3\.2\.1\.17].true.real.attribute"/>
+          <parameter key="48" value="[G3\.3\.2\.1\.18].true.real.attribute"/>
+          <parameter key="49" value="[G3\.3\.2\.1\.19].true.real.attribute"/>
+          <parameter key="50" value="[G3\.3\.2\.1\.20].true.real.attribute"/>
+          <parameter key="51" value="[G3\.3\.2\.1\.21].true.real.attribute"/>
+          <parameter key="52" value="[G3\.3\.2\.1\.22].true.real.attribute"/>
+          <parameter key="53" value="[G3\.3\.2\.1\.23].true.real.attribute"/>
+          <parameter key="54" value="[G3\.3\.2\.1\.24].true.real.attribute"/>
+          <parameter key="55" value="[G3\.3\.2\.1\.25].true.real.attribute"/>
+          <parameter key="56" value="[G3\.3\.2\.1\.26].true.real.attribute"/>
+          <parameter key="57" value="[G3\.3\.2\.1\.27].true.real.attribute"/>
+          <parameter key="58" value="[G3\.3\.2\.1\.28].true.real.attribute"/>
+          <parameter key="59" value="[G3\.3\.2\.1\.29].true.real.attribute"/>
+          <parameter key="60" value="[G3\.3\.2\.1\.30].true.real.attribute"/>
+          <parameter key="61" value="[G3\.3\.4\.1\.1].true.real.attribute"/>
+          <parameter key="62" value="[G3\.3\.4\.1\.2].true.real.attribute"/>
+          <parameter key="63" value="[G3\.3\.4\.1\.3].true.real.attribute"/>
+          <parameter key="64" value="[G3\.3\.4\.1\.4].true.real.attribute"/>
+          <parameter key="65" value="[G3\.3\.4\.1\.5].true.real.attribute"/>
+          <parameter key="66" value="[G3\.3\.4\.1\.6].true.real.attribute"/>
+          <parameter key="67" value="[G3\.3\.4\.1\.7].true.real.attribute"/>
+          <parameter key="68" value="[G3\.3\.4\.1\.8].true.real.attribute"/>
+          <parameter key="69" value="[G3\.3\.4\.1\.9].true.real.attribute"/>
+          <parameter key="70" value="[G3\.3\.4\.1\.10].true.real.attribute"/>
+          <parameter key="71" value="[G3\.3\.4\.1\.11].true.real.attribute"/>
+          <parameter key="72" value="[G3\.3\.4\.1\.12].true.real.attribute"/>
+          <parameter key="73" value="[G3\.3\.4\.1\.13].true.real.attribute"/>
+          <parameter key="74" value="[G3\.3\.4\.1\.14].true.real.attribute"/>
+          <parameter key="75" value="[G3\.3\.4\.1\.15].true.real.attribute"/>
+          <parameter key="76" value="[G3\.3\.4\.1\.16].true.real.attribute"/>
+          <parameter key="77" value="[G3\.3\.4\.1\.17].true.real.attribute"/>
+          <parameter key="78" value="[G3\.3\.4\.1\.18].true.real.attribute"/>
+          <parameter key="79" value="[G3\.3\.4\.1\.19].true.real.attribute"/>
+          <parameter key="80" value="[G3\.3\.4\.1\.20].true.real.attribute"/>
+          <parameter key="81" value="[G3\.3\.4\.1\.21].true.real.attribute"/>
+          <parameter key="82" value="[G3\.3\.4\.1\.22].true.real.attribute"/>
+          <parameter key="83" value="[G3\.3\.4\.1\.23].true.real.attribute"/>
+          <parameter key="84" value="[G3\.3\.4\.1\.24].true.real.attribute"/>
+          <parameter key="85" value="[G3\.3\.4\.1\.25].true.real.attribute"/>
+          <parameter key="86" value="[G3\.3\.4\.1\.26].true.real.attribute"/>
+          <parameter key="87" value="[G3\.3\.4\.1\.27].true.real.attribute"/>
+          <parameter key="88" value="[G3\.3\.4\.1\.28].true.real.attribute"/>
+          <parameter key="89" value="[G3\.3\.4\.1\.29].true.real.attribute"/>
+          <parameter key="90" value="[G3\.3\.4\.1\.30].true.real.attribute"/>
+          <parameter key="91" value="class.true.polynominal.attribute"/>
+        </list>
+        <parameter key="read_not_matching_values_as_missings" value="false"/>
+        <parameter key="datamanagement" value="double_array"/>
+        <parameter key="data_management" value="auto"/>
+      </operator>
+      <operator activated="true" class="set_role" compatibility="9.0.003" expanded="true" height="82" name="Set Role" width="90" x="246" y="34">
+        <parameter key="attribute_name" value="class"/>
+        <parameter key="target_role" value="label"/>
+        <list key="set_additional_roles"/>
+      </operator>
+      <operator activated="true" class="concurrency:cross_validation" compatibility="9.0.003" expanded="true" height="145" name="Cross Validation" width="90" x="447" y="34">
+        <parameter key="split_on_batch_attribute" value="false"/>
+        <parameter key="leave_one_out" value="false"/>
+        <parameter key="number_of_folds" value="5"/>
+        <parameter key="sampling_type" value="automatic"/>
+        <parameter key="use_local_random_seed" value="false"/>
+        <parameter key="local_random_seed" value="1992"/>
+        <parameter key="enable_parallel_execution" value="true"/>
+        <process expanded="true">
+          <operator activated="true" class="rule_induction" compatibility="9.0.003" expanded="true" height="82" name="Rule Induction" width="90" x="112" y="34">
+            <parameter key="criterion" value="information_gain"/>
+            <parameter key="sample_ratio" value="0.9"/>
+            <parameter key="pureness" value="0.9"/>
+            <parameter key="minimal_prune_benefit" value="0.25"/>
+            <parameter key="use_local_random_seed" value="false"/>
+            <parameter key="local_random_seed" value="1992"/>
+          </operator>
+          <connect from_port="training set" to_op="Rule Induction" to_port="training set"/>
+          <connect from_op="Rule Induction" from_port="model" to_port="model"/>
+          <portSpacing port="source_training set" spacing="0"/>
+          <portSpacing port="sink_model" spacing="0"/>
+          <portSpacing port="sink_through 1" spacing="0"/>
+        </process>
+        <process expanded="true">
+          <operator activated="true" class="apply_model" compatibility="9.0.003" expanded="true" height="82" name="Apply Model" width="90" x="112" y="34">
+            <list key="application_parameters"/>
+            <parameter key="create_view" value="false"/>
+          </operator>
+          <operator activated="true" class="performance" compatibility="9.0.003" expanded="true" height="82" name="Cross Validation (2)" width="90" x="313" y="34">
+            <parameter key="use_example_weights" value="true"/>
+          </operator>
+          <connect from_port="model" to_op="Apply Model" to_port="model"/>
+          <connect from_port="test set" to_op="Apply Model" to_port="unlabelled data"/>
+          <connect from_op="Apply Model" from_port="labelled data" to_op="Cross Validation (2)" to_port="labelled data"/>
+          <connect from_op="Cross Validation (2)" from_port="performance" to_port="performance 1"/>
+          <connect from_op="Cross Validation (2)" from_port="example set" to_port="test set results"/>
+          <portSpacing port="source_model" spacing="0"/>
+          <portSpacing port="source_test set" spacing="0"/>
+          <portSpacing port="source_through 1" spacing="0"/>
+          <portSpacing port="sink_test set results" spacing="0"/>
+          <portSpacing port="sink_performance 1" spacing="0"/>
+          <portSpacing port="sink_performance 2" spacing="0"/>
+        </process>
+      </operator>
+      <connect from_op="Read CSV" from_port="output" to_op="Set Role" to_port="example set input"/>
+      <connect from_op="Set Role" from_port="example set output" to_op="Cross Validation" to_port="example set"/>
+      <connect from_op="Cross Validation" from_port="performance 1" to_port="result 1"/>
+      <portSpacing port="source_input 1" spacing="0"/>
+      <portSpacing port="sink_result 1" spacing="0"/>
+      <portSpacing port="sink_result 2" spacing="0"/>
+    </process>
+  </operator>
+</process>
